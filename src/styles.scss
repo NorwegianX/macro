@@ -1,1 +1,100 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 /* You can add global styles to this file, and also import other style files */
+
+body {
+  font-family: 'Roboto';
+  @apply bg-gray-800 text-gray-200;
+}
+
+h1 {
+  @apply font-black text-4xl mt-4 mb-4;
+}
+
+h2 {
+  @apply font-black text-2xl;
+}
+
+h3 {
+  @apply font-bold text-xl;
+}
+
+h4 {
+  @apply font-bold text-lg;
+}
+
+.outer-wrapper {
+  @apply w-full px-4;
+}
+
+label {
+  @apply text-gray-400 p-4;
+}
+
+input {
+  @apply bg-gray-700 bg-opacity-30 p-4 rounded focus:outline-none focus:bg-opacity-50;
+}
+
+button {
+  @apply flex items-center justify-center;
+  @apply bg-left bg-contain bg-no-repeat;
+  @apply select-none outline-none;
+  @apply font-bold;
+  @apply p-4;
+
+  .arrow {
+    opacity: 0;
+  }
+}
+
+button:hover {
+  @apply text-yellow-400 bg-gray-700 bg-opacity-30;
+  .arrow {
+    opacity: 1;
+  }
+}
+
+button:active {
+  @apply outline-none;
+}
+
+button:focus {
+  @apply outline-none;
+}
+
+button.button-border {
+  @apply border-yellow-400 border-b-2 rounded;
+}
+
+button.button-border:active {
+  @apply border-gray-200;
+}
+
+button.orange {
+  @apply bg-yellow-400;
+}
+
+button.orange:hover {
+  @apply bg-yellow-500;
+}
+
+button.orange:active {
+  @apply bg-yellow-600;
+}
+
+button.dark {
+  @apply bg-gray-700 bg-opacity-30 text-gray-200;
+}
+
+button.dark:hover {
+  @apply bg-gray-600;
+}
+
+button.shadow {
+  @apply shadow-lg;
+}
+
+svg-icon.google {
+  @apply text-4xl mr-4;
+}

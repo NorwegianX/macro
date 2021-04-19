@@ -1,0 +1,8 @@
+button.nav {
+  @apply font-bold text-xl;
+}
+
+.is-active {
+  background: #fbbf23 !important;
+  @apply text-gray-800;
+}

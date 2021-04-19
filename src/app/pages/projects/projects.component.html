@@ -1,0 +1,21 @@
+<button
+  class="dark button-border shadow w-full h-16 bg-center text-lg font-bold md:mt-4"
+  [disabled]="loading"
+  (click)="createProject()"
+>
+  <i class="mr-4 fas fa-calendar-plus"></i>
+  Create new project
+</button>
+
+<label class="flex mt-4 ml-4" *ngIf="projects.length > 0"
+  >Ongoing projects</label
+>
+
+<button
+  class="h-12 w-full justify-start text-lg rounded"
+  *ngFor="let project of projects"
+  [routerLink]="['project', formatRoute(project.pk.S)]"
+>
+  {{ project?.name?.S }}
+  <i class="arrow ml-auto fas fa-arrow-right"></i>
+</button>

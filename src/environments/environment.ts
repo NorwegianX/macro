@@ -3,7 +3,16 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  MACRO_API: 'http://localhost:3333',
+  cognito: {
+    REGION: 'eu-west-1',
+    USER_POOL_ID: 'eu-west-1_e15ks9Izg',
+    APP_CLIENT_ID: '2pa6o9kmcct3rnesgh8p6smjm0',
+    DOMAIN: 'norx.auth.eu-west-1.amazoncognito.com',
+    REDIRECT_SIGN_IN: 'http://localhost:4200',
+    REDIRECT_SIGN_OUT: 'http://localhost:4200',
+  },
 };
 
 /*

@@ -1,0 +1,11 @@
+<!-- Menu button -->
+<div class="flex justify-between items-center md:hidden">
+  <h1>{{ headerService.title }}</h1>
+  <button
+    class="text-4xl"
+    (click)="headerService.toggleNav()"
+    [ngClass]="headerService.navOpen ? 'hidden' : 'block'"
+  >
+    <i class="fas fa-bars"></i>
+  </button>
+</div>

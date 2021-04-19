@@ -1,0 +1,41 @@
+<div class="flex flex-col" *ngIf="project">
+  <label class="md:mt-4">Attributes</label>
+  <input [(ngModel)]="project.name.S" placeholder="Name" />
+
+  <label class="md:mt-4 mt-4">Invited users</label>
+  <button class="w-full justify-start text-lg rounded">
+    rein@otter.productions
+    <i class="arrow ml-auto fas fa-times"></i>
+  </button>
+  <button class="w-full justify-start text-lg rounded">
+    rein.7@hotmail.com
+    <i class="arrow ml-auto fas fa-times"></i>
+  </button>
+  <input placeholder="Invite" />
+
+  <button
+    class="dark button-border shadow w-full bg-center font-bold mt-4 md:mt-8"
+    (click)="deleteQuestion = true"
+    *ngIf="!deleteQuestion"
+  >
+    <i class="mr-4 fas fa-calendar-plus"></i>
+    Delete project
+  </button>
+
+  <div class="flex flex-col mt-4 md:mt-8" *ngIf="deleteQuestion">
+    <button
+      class="dark button-border shadow w-full bg-center font-bold mb-4"
+      (click)="deleteQuestion = false"
+    >
+      <i class="mr-4 fas fa-times"></i>
+      Cancel
+    </button>
+    <button
+      class="dark button-border shadow w-full bg-center font-bold"
+      (click)="deleteProject()"
+    >
+      <i class="mr-4 fas fa-check"></i>
+      Confirm
+    </button>
+  </div>
+</div>

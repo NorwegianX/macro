@@ -3,10 +3,20 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
+    "paths": {
+      "@/services": ["./src/app/services"],
+      "@/guards": ["./src/app/guards"],
+      "@/environment": ["./src/environments/environment"],
+      "@/interfaces": ["./src/app/interfaces"],
+      "@/scripts/*": ["./src/app/scripts/*"],
+      "@app/svg/*": ["src/app/svg/*"],
+      "@/twconfig": ["./tailwind.config"]
+    },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitReturns": true,
+    "noImplicitAny": false,
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
     "declaration": false,
@@ -16,10 +26,7 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "es2020",
-    "lib": [
-      "es2018",
-      "dom"
-    ]
+    "lib": ["es2018", "dom"]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

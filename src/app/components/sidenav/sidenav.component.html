@@ -1,0 +1,50 @@
+<div class="flex items-start">
+  <!-- Sidebar -->
+  <div
+    class="block absolute md:relative z-20 h-screen bg-gray-700 transition-all duration-300 ease-in-out"
+    [ngClass]="!headerService.navOpen ? 'w-0' : 'w-11/12 md:w-full'"
+  >
+    <!-- Internal wrapper to display "text" -->
+    <div
+      class="flex flex-col items-start h-full ml-2 mr-2"
+      [ngClass]="!headerService.navOpen ? 'hidden' : 'flex'"
+    >
+      <!-- Menu header -->
+      <div class="flex w-full justify-between box-content">
+        <h1 class="whitespace-nowrap outer-wrapper md:pr-16">Norx Macro</h1>
+        <button
+          class="text-4xl w-16 md:hidden"
+          (click)="headerService.toggleNav()"
+        >
+          <i class="fas fa-caret-left"></i>
+        </button>
+      </div>
+      <!-- Navigation buttons -->
+      <button
+        class="dark justify-start pl-4 pr-4 text-xl h-14 w-full rounded mb-2"
+        (click)="navigate(route.path)"
+        [routerLink]="[route.path]"
+        [routerLinkActive]="'is-active'"
+        [routerLinkActiveOptions]="{ exact: route.path === '/' ? true : false }"
+        *ngFor="let route of routes"
+      >
+        {{ route.name }} <i class="ml-auto fas" [ngClass]="route.icon"></i>
+      </button>
+
+      <!-- Logout button -->
+      <button
+        class="dark justify-start pl-4 pr-4 text-xl h-14 w-full rounded mb-2 mt-auto"
+        (click)="authService.signOut()"
+      >
+        <i class="fas fa-sign-out mr-2"></i> Sign out
+      </button>
+    </div>
+  </div>
+
+  <!-- Dark background -->
+  <div
+    class="flex absolute z-10 bg-black w-full z-10 h-screen"
+    [ngClass]="!headerService.navOpen ? 'hidden' : 'block md:hidden'"
+    (click)="headerService.toggleNav()"
+  ></div>
+</div>
